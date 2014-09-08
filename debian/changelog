@@ -1,6 +1,7 @@
 python-service-identity (1.0.0-3pexip1) pexip; urgency=low
 
   * Prepare Pexip packaging
+  * debian/{control,rules}: Disable Python3 support
 
  -- John-Mark Bell <jmb@pexip.com>  Mon, 08 Sep 2014 16:22:12 +0000
 

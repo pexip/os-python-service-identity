@@ -4,8 +4,11 @@
 #DH_VERBOSE = 1
 
 %:
-	dh $@ --with python2,python3 --buildsystem=pybuild
+	dh $@ --with python2 --buildsystem=pybuild
 
 override_dh_auto_test:
 	: # ignore test results, idna test fail
 	-dh_auto_test -- --test-pytest --test-args='{dir}/tests'
+
+override_dh_auto_install:
+	python setup.py install --root='debian/tmp' --install-layout=deb
