@@ -1,7 +1,8 @@
 Source: python-service-identity
 Priority: optional
-Maintainer: Matthias Klose <doko@debian.org>
-Uploaders: Free Ekanayaka <freee@debian.org>
+Maintainer: Pexip AS <packaging@pexip.com>
+XSBC-Pexip-Original-Maintainer: Matthias Klose <doko@debian.org>
+XSBC-Pexip-Original-Uploaders: Free Ekanayaka <freee@debian.org>
 Build-Depends: debhelper (>= 9), dh-python,
   python-all, python-setuptools, python-openssl, python-pyasn1-modules, python-characteristic, python-pytest,
   python3-all-dev, python3-setuptools, python3-openssl, python3-pyasn1-modules, python3-characteristic, python3-pytest,
@@ -11,6 +12,7 @@ Build-Depends-Indep: python3-sphinx
 Standards-Version: 3.9.5
 Section: python
 Homepage: https://pypi.python.org/pypi/service_identity
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ jessie
 
 Package: python-service-identity
 Architecture: all

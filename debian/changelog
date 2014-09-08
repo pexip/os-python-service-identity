@@ -1,3 +1,9 @@
+python-service-identity (1.0.0-3pexip1) pexip; urgency=low
+
+  * Prepare Pexip packaging
+
+ -- John-Mark Bell <jmb@pexip.com>  Mon, 08 Sep 2014 16:22:12 +0000
+
 python-service-identity (1.0.0-3) unstable; urgency=medium
 
   * Drop build dependency on python{,3}-idna (needs some more packaging work).
