@@ -1,8 +1,31 @@
+python-service-identity (16.0.0-2) unstable; urgency=medium
+
+  * Adopt package; thanks to Matthias Klose for his work so far.
+  * Update debian/watch to check signatures and use https.
+  * Switch python{,3}-characteristic dependency to python{,3}-attr
+    (closes: #815385).
+
+ -- Tristan Seligmann <mithrandi@debian.org>  Sun, 21 Feb 2016 23:30:43 +0200
+
+python-service-identity (16.0.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Relax build dependencies. Closes: #799687.
+
+ -- Matthias Klose <doko@debian.org>  Sat, 20 Feb 2016 22:23:25 +0100
+
+python-service-identity (14.0.0-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Build-depend on python3-idna, python-idna.
+
+ -- Matthias Klose <doko@debian.org>  Wed, 02 Sep 2015 21:17:52 +0200
+
 python-service-identity (1.0.0-3) unstable; urgency=medium
 
   * Drop build dependency on python{,3}-idna (needs some more packaging work).
 
- -- Matthias Klose <doko@foobar>  Sat, 09 Aug 2014 21:02:48 +0200
+ -- Matthias Klose <doko@debian.org>  Sat, 09 Aug 2014 21:02:48 +0200
 
 python-service-identity (1.0.0-2) unstable; urgency=medium
 

@@ -3,8 +3,15 @@ Upstream-Name: service_identity
 Source: https://pypi.python.org/pypi/service_identity/
 
 Files: *
-Copyright: Copyright (c) 2014 Hynek Schlawack
-License: MIT
+Copyright: 2014 Hynek Schlawack
+License: Expat
+
+Files: debian/*
+Copyright: 2014 Matthias Klose <doko@debian.org>
+           2016 Tristan Seligmann <mithrandi@debian.org>
+License: Expat
+
+License: Expat
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
  in the Software without restriction, including without limitation the rights
@@ -22,8 +29,3 @@ License: MIT
  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  SOFTWARE.
-
-Files: debian/*
-Copyright: 2014 Matthias Klose <doko@debian.org>
-License: MIT
- See above for the license.
