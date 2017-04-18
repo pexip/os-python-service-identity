@@ -5,7 +5,7 @@ XSBC-Pexip-Original-Maintainer: Matthias Klose <doko@debian.org>
 XSBC-Pexip-Original-Uploaders: Free Ekanayaka <freee@debian.org>
 Build-Depends: debhelper (>= 9), dh-python,
   python-all, python-setuptools, python-openssl, python-pyasn1-modules, python-characteristic, python-pytest,
-#  python3-all-dev, python3-setuptools, python3-openssl, python3-pyasn1-modules, python3-characteristic, python3-pytest,
+  python3-all-dev, python3-setuptools, python3-openssl, python3-pyasn1-modules, python3-characteristic, python3-pytest,
 # needs some packaging work
 # python3-idna, python-idna
 Build-Depends-Indep: python3-sphinx
@@ -26,14 +26,14 @@ Description: Service identity verification for pyOpenSSL (Python 2 module)
  service_identity implements RFC 6125 fully and plans to add other
  relevant RFCs too.
 
-#Package: python3-service-identity
-#Architecture: all
-#Depends: ${python3:Depends}, ${misc:Depends}
-#Recommends: python3-idna
-#Description: Service identity verification for pyOpenSSL (Python 3 module)
-# Service_identity aspires to give you all the tools you need for verifying
-# whether a certificate is valid for the intended purposes.
-# .
-# In the simplest case, this means host name verification.  However,
-# service_identity implements RFC 6125 fully and plans to add other
-# relevant RFCs too.
+Package: python3-service-identity
+Architecture: all
+Depends: ${python3:Depends}, ${misc:Depends}
+Recommends: python3-idna
+Description: Service identity verification for pyOpenSSL (Python 3 module)
+ Service_identity aspires to give you all the tools you need for verifying
+ whether a certificate is valid for the intended purposes.
+ .
+ In the simplest case, this means host name verification.  However,
+ service_identity implements RFC 6125 fully and plans to add other
+ relevant RFCs too.
