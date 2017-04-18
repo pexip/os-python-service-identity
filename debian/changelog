@@ -1,3 +1,9 @@
+python-service-identity (1.0.0-3pexip2) pexip; urgency=low
+
+  * Restore python3 build
+
+ -- John-Mark Bell <jmb@pexip.com>  Tue, 18 Apr 2017 08:02:57 +0100
+
 python-service-identity (1.0.0-3pexip1) pexip; urgency=low
 
   * Prepare Pexip packaging
