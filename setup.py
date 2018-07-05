@@ -5,69 +5,109 @@ import re
 from setuptools import setup, find_packages
 
 
+###############################################################################
+
+NAME = "service_identity"
+KEYWORDS = ["cryptography", "openssl", "pyopenssl"]
+CLASSIFIERS = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: English",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: BSD",
+    "Operating System :: POSIX :: Linux",
+    "Operating System :: POSIX",
+    "Programming Language :: Python :: 2",
+    "Programming Language :: Python :: 2.7",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.4",
+    "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+    "Programming Language :: Python",
+    "Topic :: Security :: Cryptography",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+INSTALL_REQUIRES = [
+    "attrs",
+    "pyasn1",
+    "pyasn1-modules",
+    "pyopenssl>=0.12",
+]
+EXTRAS_REQUIRE = {
+    "idna": ["idna"],
+}
+
+###############################################################################
+
+HERE = os.path.abspath(os.path.dirname(__file__))
+
+try:
+    PACKAGES
+except NameError:
+    PACKAGES = find_packages(where="src")
+
+try:
+    META_PATH
+except NameError:
+    META_PATH = os.path.join(HERE, "src", NAME, "__init__.py")
+
+
 def read(*parts):
     """
     Build an absolute path from *parts* and and return the contents of the
     resulting file.  Assume UTF-8 encoding.
     """
-    here = os.path.abspath(os.path.dirname(__file__))
-    with codecs.open(os.path.join(here, *parts), 'rb', 'utf-8') as f:
+    with codecs.open(os.path.join(HERE, *parts), "rb", "utf-8") as f:
         return f.read()
 
 
-def find_version(*file_paths):
+META_FILE = read(META_PATH)
+
+
+def find_meta(meta):
     """
-    Build a path from *file_paths* and search for a ``__version__``
-    string inside.
+    Extract __*meta*__ from META_FILE.
     """
-    version_file = read(*file_paths)
-    version_match = re.search(r"^__version__ = ['\"]([^'\"]*)['\"]",
-                              version_file, re.M)
-    if version_match:
-        return version_match.group(1)
-    raise RuntimeError("Unable to find version string.")
+    meta_match = re.search(
+        r"^__{meta}__ = ['\"]([^'\"]*)['\"]".format(meta=meta),
+        META_FILE, re.M
+    )
+    if meta_match:
+        return meta_match.group(1)
+    raise RuntimeError("Unable to find __{meta}__ string.".format(meta=meta))
+
+URI = find_meta("uri")
+LONG = (
+    read("README.rst") + "\n\n" +
+    "Release Information\n" +
+    "===================\n\n" +
+    re.search("(\d{2}.\d.\d \(.*?\)\n.*?)\n\n\n----\n\n\n",
+              read("CHANGELOG.rst"), re.S).group(1) +
+    "\n\n`Full changelog " +
+    "<{uri}en/stable/changelog.html>`_.\n\n" + read("AUTHORS.rst")
+).format(uri=URI)
 
 
 if __name__ == "__main__":
     setup(
-        description="Service identity verification for pyOpenSSL.",
-        long_description=(
-            read("README.rst") + "\n\n" +
-            read("AUTHORS.rst")
-        ),
-        install_requires=[
-            "characteristic",
-            "pyasn1",
-            "pyasn1-modules",
-            "pyopenssl>=0.12",
-        ],
-        keywords="cryptography openssl pyopenssl",
-        license="MIT",
-        name="service_identity",
-        packages=find_packages(exclude=['tests*']),
-        url="https://github.com/pyca/service_identity",
-        version=find_version('service_identity/__init__.py'),
-        maintainer='Hynek Schlawack',
-        maintainer_email='hs@ox.cx',
-        classifiers=[
-            "Development Status :: 5 - Production/Stable",
-            "Intended Audience :: Developers",
-            'License :: OSI Approved :: MIT License',
-            "Natural Language :: English",
-            "Operating System :: MacOS :: MacOS X",
-            "Operating System :: POSIX",
-            "Operating System :: POSIX :: BSD",
-            "Operating System :: POSIX :: Linux",
-            "Operating System :: Microsoft :: Windows",
-            "Programming Language :: Python",
-            "Programming Language :: Python :: 2",
-            "Programming Language :: Python :: 2.6",
-            "Programming Language :: Python :: 2.7",
-            "Programming Language :: Python :: 3",
-            "Programming Language :: Python :: 3.3",
-            "Programming Language :: Python :: 3.4",
-            "Programming Language :: Python :: Implementation :: CPython",
-            "Programming Language :: Python :: Implementation :: PyPy",
-            "Topic :: Security :: Cryptography",
-        ],
+        name=NAME,
+        description=find_meta("description"),
+        license=find_meta("license"),
+        url=URI,
+        version=find_meta("version"),
+        author=find_meta("author"),
+        author_email=find_meta("email"),
+        maintainer=find_meta("author"),
+        maintainer_email=find_meta("email"),
+        keywords=KEYWORDS,
+        long_description=LONG,
+        packages=PACKAGES,
+        package_dir={"": "src"},
+        zip_safe=False,
+        classifiers=CLASSIFIERS,
+        install_requires=INSTALL_REQUIRES,
+        extras_require=EXTRAS_REQUIRE,
     )

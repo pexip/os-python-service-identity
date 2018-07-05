@@ -1,5 +1,5 @@
 Metadata-Version: 1.1
-Name: service_identity
+Name: service-identity
 Version: 16.0.0
 Summary: Service identity verification for pyOpenSSL.
 Home-page: https://service-identity.readthedocs.org/

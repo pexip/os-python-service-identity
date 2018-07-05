@@ -1,4 +1,7 @@
-characteristic
+attrs
 pyasn1
 pyasn1-modules
 pyopenssl>=0.12
+
+[idna]
+idna
