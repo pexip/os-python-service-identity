@@ -12,7 +12,7 @@ Build-Depends-Indep: python3-sphinx
 Standards-Version: 3.9.5
 Section: python
 Homepage: https://pypi.python.org/pypi/service_identity
-XS-Pexip-Upstream: http://ftp.debian.org/debian/ jessie
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ stretch
 
 Package: python-service-identity
 Architecture: all
