@@ -1,22 +1,85 @@
+sudo: false
+cache:
+  directories:
+    - $HOME/.cache/pip
+
 language: python
-python: 2.7
-env:
-    - TOX_ENV=py26
-    - TOX_ENV=py27
-    - TOX_ENV=py27-pyopenssl013
-    # Fails with '.../OpenSSL/SSL.so: undefined symbol: SSLv2_method'.
-    # - TOX_ENV=py27-pyopenssl012
-    - TOX_ENV=py33
-    - TOX_ENV=py34
-    - TOX_ENV=pypy
-    - TOX_ENV=flake8
-    - TOX_ENV=py3flake8
+
+
+matrix:
+  include:
+    - python: "2.7"
+      env: TOXENV=py27-pyopenssl015-idna
+    - python: "2.7"
+      env: TOXENV=py27-pyopenssl015-noidna
+    - python: "2.7"
+      env: TOXENV=py27-pyopenssl014-idna
+    - python: "2.7"
+      env: TOXENV=py27-pyopenssl014-noidna
+    - python: "3.4"
+      env: TOXENV=py34-pyopenssl015-idna
+    - python: "3.4"
+      env: TOXENV=py34-pyopenssl015-noidna
+    - python: "3.4"
+      env: TOXENV=py34-pyopenssl014-idna
+    - python: "3.4"
+      env: TOXENV=py34-pyopenssl014-noidna
+    - python: "3.5"
+      env: TOXENV=py35-pyopenssl015-idna
+    - python: "3.5"
+      env: TOXENV=py35-pyopenssl015-noidna
+    - python: "3.5"
+      env: TOXENV=py35-pyopenssl014-idna
+    - python: "3.5"
+      env: TOXENV=py35-pyopenssl014-noidna
+    - python: "pypy"
+      env: TOXENV=pypy-pyopenssl015-idna
+    - python: "pypy"
+      env: TOXENV=pypy-pyopenssl015-noidna
+    - python: "pypy"
+      env: TOXENV=pypy-pyopenssl014-idna
+    - python: "pypy"
+      env: TOXENV=pypy-pyopenssl014-noidna
+
+    # Meta
+    - python: "3.5"
+      env: TOXENV=flake8
+    - python: "3.5"
+      env: TOXENV=manifest
+    - python: "3.5"
+      env: TOXENV=docs
+    - python: "3.5"
+      env: TOXENV=readme
+
 
 install:
-    - pip install tox coveralls
+  - |
+    if [[ "${TOXENV}" = pypy* ]]; then
+        git clone --depth 1 https://github.com/yyuu/pyenv.git ~/.pyenv
+        PYENV_ROOT="$HOME/.pyenv"
+        PATH="$PYENV_ROOT/bin:$PATH"
+        eval "$(pyenv init -)"
+        pyenv install pypy-4.0.1
+        pyenv global pypy-4.0.1
+    fi
+  - pip install tox
+
 
 script:
-    - tox --hashseed 0 -e $TOX_ENV
+  - |
+    # activate the pypy env we installed via our custom pyenv in the install stage
+    if [[ "${TOXENV}" == "pypy" ]]; then
+        PYENV_ROOT="$HOME/.pyenv"
+        PATH="$PYENV_ROOT/bin:$PATH"
+        eval "$(pyenv init -)"
+    fi
+  - tox
+
+
+before_install:
+  - pip install codecov
+
 
 after_success:
-    - coveralls
+  - tox -e coverage-report
+  - codecov

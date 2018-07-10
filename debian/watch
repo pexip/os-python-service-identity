@@ -1,3 +1,3 @@
 version=3
-opts=uversionmangle=s/(\d)[_\.\-\+]?((RC|rc|pre|dev|beta|alpha|b|a)[\-\.]?\d*)$/$1~$2/ \
-http://pypi.python.org/packages/source/s/service_identity/service_identity-(\d.*)\.(?:tgz|tar\.(?:gz|bz2|xz))
+opts=uversionmangle=s/(rc|a|b|c)/~$1/,pgpsigurlmangle=s/$/.asc/ \
+https://pypi.debian.net/service_identity/service_identity-(.+)\.(?:zip|tgz|tbz|txz|(?:tar\.(?:gz|bz2|xz)))

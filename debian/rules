@@ -3,9 +3,11 @@
 # output every command that modifies files on the build system.
 #DH_VERBOSE = 1
 
+export LC_ALL=C.UTF-8
+
 %:
 	dh $@ --with python2,python3 --buildsystem=pybuild
 
 override_dh_auto_test:
 	: # ignore test results, idna test fail
-	-dh_auto_test -- --test-pytest --test-args='{dir}/tests'
+	dh_auto_test -- --test-pytest --test-args='{dir}/tests'

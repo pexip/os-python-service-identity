@@ -1,22 +1,36 @@
 Source: python-service-identity
 Priority: optional
 Maintainer: Pexip AS <packaging@pexip.com>
-XSBC-Pexip-Original-Maintainer: Matthias Klose <doko@debian.org>
-XSBC-Pexip-Original-Uploaders: Free Ekanayaka <freee@debian.org>
-Build-Depends: debhelper (>= 9), dh-python,
-  python-all, python-setuptools, python-openssl, python-pyasn1-modules, python-characteristic, python-pytest,
-  python3-all-dev, python3-setuptools, python3-openssl, python3-pyasn1-modules, python3-characteristic, python3-pytest,
-# needs some packaging work
-# python3-idna, python-idna
+XSBC-Pexip-Original-Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+XSBC-Pexip-Original-Uploaders: Tristan Seligmann <mithrandi@debian.org>
+Build-Depends:
+ debhelper (>= 9),
+ dh-python,
+ python-all,
+ python-attr,
+ python-idna,
+ python-openssl,
+ python-pyasn1-modules,
+ python-pytest,
+ python-setuptools,
+ python3-all,
+ python3-attr,
+ python3-idna,
+ python3-openssl,
+ python3-pyasn1-modules,
+ python3-pytest,
+ python3-setuptools,
 Build-Depends-Indep: python3-sphinx
-Standards-Version: 3.9.5
+Standards-Version: 3.9.7
 Section: python
 Homepage: https://pypi.python.org/pypi/service_identity
+Vcs-Git: https://anonscm.debian.org/git/python-modules/packages/python-service-identity.git
+Vcs-Browser: https://anonscm.debian.org/cgit/python-modules/packages/python-servicy-identity.git
 XS-Pexip-Upstream: http://ftp.debian.org/debian/ stretch
 
 Package: python-service-identity
 Architecture: all
-Depends: ${python:Depends}, ${misc:Depends}
+Depends: ${misc:Depends}, ${python:Depends}
 Recommends: python-idna
 Description: Service identity verification for pyOpenSSL (Python 2 module)
  Service_identity aspires to give you all the tools you need for verifying
@@ -25,10 +39,12 @@ Description: Service identity verification for pyOpenSSL (Python 2 module)
  In the simplest case, this means host name verification.  However,
  service_identity implements RFC 6125 fully and plans to add other
  relevant RFCs too.
+ .
+ This package contains service_identity for Python 2.
 
 Package: python3-service-identity
 Architecture: all
-Depends: ${python3:Depends}, ${misc:Depends}
+Depends: ${misc:Depends}, ${python3:Depends}
 Recommends: python3-idna
 Description: Service identity verification for pyOpenSSL (Python 3 module)
  Service_identity aspires to give you all the tools you need for verifying
@@ -37,3 +53,5 @@ Description: Service identity verification for pyOpenSSL (Python 3 module)
  In the simplest case, this means host name verification.  However,
  service_identity implements RFC 6125 fully and plans to add other
  relevant RFCs too.
+ .
+ This package contains service_identity for Python 3.
