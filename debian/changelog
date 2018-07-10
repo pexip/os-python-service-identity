@@ -1,3 +1,9 @@
+python-service-identity (16.0.0-2pexip1) pexip; urgency=medium
+
+  * Migrate to Stretch
+
+ -- John-Mark Bell <jmb@pexip.com>  Tue, 10 Jul 2018 11:46:59 +0000
+
 python-service-identity (16.0.0-2) unstable; urgency=medium
 
   * Adopt package; thanks to Matthias Klose for his work so far.
