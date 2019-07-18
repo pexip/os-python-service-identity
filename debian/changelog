@@ -1,3 +1,51 @@
+python-service-identity (18.1.0-5~bpo10+1) buster-backports; urgency=medium
+
+  * Rebuild for buster-backports.
+
+ -- Andrej Shadura <andrewsh@debian.org>  Thu, 18 Jul 2019 20:55:08 -0300
+
+python-service-identity (18.1.0-5) unstable; urgency=medium
+
+  * No-change rebuild.
+
+ -- Andrej Shadura <andrewsh@debian.org>  Sat, 13 Jul 2019 01:16:30 +0200
+
+python-service-identity (18.1.0-4) unstable; urgency=medium
+
+  * Don’t *actually* fail when there are no tests to run.
+
+ -- Andrej Shadura <andrewsh@debian.org>  Thu, 11 Jul 2019 20:06:23 +0200
+
+python-service-identity (18.1.0-3) unstable; urgency=medium
+
+  * Skip tests when not present in the upstream tarball.
+
+ -- Andrej Shadura <andrewsh@debian.org>  Wed, 26 Jun 2019 12:59:52 -0500
+
+python-service-identity (18.1.0-2) unstable; urgency=medium
+
+  * Upload to unstable (Closes: #930636).
+  * Use debhelper-compat 12.
+  * Update copyright years.
+  * Bump Standards-Version to 4.3.0.3 (no changes).
+
+ -- Andrej Shadura <andrewsh@debian.org>  Mon, 24 Jun 2019 15:30:09 -0500
+
+python-service-identity (18.1.0-1) experimental; urgency=medium
+
+  [ Ondřej Nový ]
+  * d/control: Set Vcs-* to salsa.debian.org
+  * d/copyright: Use https protocol in Format field
+
+  [ Andrej Shadura ]
+  * Upload to experimental.
+  * New upstream version.
+  * Add new build dependencies.
+  * Bump debhelper from old 9 to 10.
+  * Re-export upstream signing key without extra signatures.
+
+ -- Andrej Shadura <andrewsh@debian.org>  Fri, 21 Jun 2019 08:52:20 -0500
+
 python-service-identity (16.0.0-2) unstable; urgency=medium
 
   * Adopt package; thanks to Matthias Klose for his work so far.

@@ -1,13 +1,12 @@
 .coveragerc
+.pre-commit-config.yaml
 .travis.yml
 AUTHORS.rst
 CHANGELOG.rst
-CODE_OF_CONDUCT.rst
-CONTRIBUTING.rst
 LICENSE
 MANIFEST.in
 README.rst
-docs-requirements.txt
+pyproject.toml
 setup.cfg
 setup.py
 tox.ini
@@ -24,6 +23,7 @@ docs/license.rst
 src/service_identity/__init__.py
 src/service_identity/_common.py
 src/service_identity/_compat.py
+src/service_identity/cryptography.py
 src/service_identity/exceptions.py
 src/service_identity/pyopenssl.py
 src/service_identity.egg-info/PKG-INFO
@@ -32,7 +32,3 @@ src/service_identity.egg-info/dependency_links.txt
 src/service_identity.egg-info/not-zip-safe
 src/service_identity.egg-info/requires.txt
 src/service_identity.egg-info/top_level.txt
-tests/__init__.py
-tests/test_common.py
-tests/test_pyopenssl.py
-tests/util.py

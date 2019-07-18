@@ -1,9 +1,9 @@
-Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: service_identity
 Source: https://pypi.python.org/pypi/service_identity/
 
 Files: *
-Copyright: 2014 Hynek Schlawack
+Copyright: 2014—2018 Hynek Schlawack
 License: Expat
 
 Files: debian/*
