@@ -1,8 +1,8 @@
-python-service-identity (18.1.0-5~bpo10+1) buster-backports; urgency=medium
+python-service-identity (18.1.0-6) unstable; urgency=medium
 
-  * Rebuild for buster-backports.
+  * Drop python2 support; Closes: #938164
 
- -- Andrej Shadura <andrewsh@debian.org>  Thu, 18 Jul 2019 20:55:08 -0300
+ -- Sandro Tosi <morph@debian.org>  Wed, 01 Apr 2020 21:09:17 -0400
 
 python-service-identity (18.1.0-5) unstable; urgency=medium
 
