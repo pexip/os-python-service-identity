@@ -1,3 +1,9 @@
+python-service-identity (16.0.0-2pexip3) pexip; urgency=medium
+
+  * Rebuild in buster environment
+
+ -- Steve McIntyre <steve.mcintyre@pexip.com>  Thu, 16 Jul 2020 04:06:31 +0000
+
 python-service-identity (16.0.0-2pexip2) pexip; urgency=medium
 
   * Python3
