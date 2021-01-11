@@ -26,7 +26,7 @@ Section: python
 Homepage: https://pypi.python.org/pypi/service_identity
 Vcs-Git: https://anonscm.debian.org/git/python-modules/packages/python-service-identity.git
 Vcs-Browser: https://anonscm.debian.org/cgit/python-modules/packages/python-servicy-identity.git
-XS-Pexip-Upstream: http://ftp.debian.org/debian/ stretch
+XS-Pexip-Upstream: http://ftp.debian.org/debian/ bullseye
 
 Package: python-service-identity
 Architecture: all
