@@ -2,7 +2,7 @@ import codecs
 import os
 import re
 
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 
 ###############################################################################
@@ -24,6 +24,8 @@ CLASSIFIERS = [
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.4",
     "Programming Language :: Python :: 3.5",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: Implementation :: CPython",
     "Programming Language :: Python :: Implementation :: PyPy",
     "Programming Language :: Python",
@@ -31,28 +33,28 @@ CLASSIFIERS = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 INSTALL_REQUIRES = [
-    "attrs",
-    "pyasn1",
+    "attrs>=16.0.0",
+    "ipaddress; python_version<'3.3'",
     "pyasn1-modules",
-    "pyopenssl>=0.12",
+    # Place pyasn1 after pyasn1-modules to workaround setuptools install bug:
+    # https://github.com/pypa/setuptools/issues/498
+    "pyasn1",
+    "cryptography",
 ]
 EXTRAS_REQUIRE = {
     "idna": ["idna"],
+    "tests": ["coverage>=4.2.0", "pytest"],
+    "docs": ["sphinx"],
 }
+EXTRAS_REQUIRE["dev"] = (
+    EXTRAS_REQUIRE["tests"] + EXTRAS_REQUIRE["docs"] + ["idna", "pyOpenSSL"]
+)
 
 ###############################################################################
 
 HERE = os.path.abspath(os.path.dirname(__file__))
-
-try:
-    PACKAGES
-except NameError:
-    PACKAGES = find_packages(where="src")
-
-try:
-    META_PATH
-except NameError:
-    META_PATH = os.path.join(HERE, "src", NAME, "__init__.py")
+PACKAGES = find_packages(where="src")
+META_PATH = os.path.join(HERE, "src", NAME, "__init__.py")
 
 
 def read(*parts):
@@ -72,22 +74,27 @@ def find_meta(meta):
     Extract __*meta*__ from META_FILE.
     """
     meta_match = re.search(
-        r"^__{meta}__ = ['\"]([^'\"]*)['\"]".format(meta=meta),
-        META_FILE, re.M
+        r"^__{meta}__ = ['\"]([^'\"]*)['\"]".format(meta=meta), META_FILE, re.M
     )
     if meta_match:
         return meta_match.group(1)
     raise RuntimeError("Unable to find __{meta}__ string.".format(meta=meta))
 
+
 URI = find_meta("uri")
 LONG = (
-    read("README.rst") + "\n\n" +
-    "Release Information\n" +
-    "===================\n\n" +
-    re.search("(\d{2}.\d.\d \(.*?\)\n.*?)\n\n\n----\n\n\n",
-              read("CHANGELOG.rst"), re.S).group(1) +
-    "\n\n`Full changelog " +
-    "<{uri}en/stable/changelog.html>`_.\n\n" + read("AUTHORS.rst")
+    read("README.rst")
+    + "\n\n"
+    + "Release Information\n"
+    + "===================\n\n"
+    + re.search(
+        r"(\d{2}.\d.\d \(.*?\)\n.*?)\n\n\n----\n\n\n",
+        read("CHANGELOG.rst"),
+        re.S,
+    ).group(1)
+    + "\n\n`Full changelog "
+    + "<{uri}en/stable/changelog.html>`_.\n\n"
+    + read("AUTHORS.rst")
 ).format(uri=URI)
 
 

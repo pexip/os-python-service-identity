@@ -4,7 +4,7 @@ Verify service identities.
 
 from __future__ import absolute_import, division, print_function
 
-from . import pyopenssl
+from . import cryptography, pyopenssl
 from .exceptions import (
     CertificateError,
     SubjectAltNameWarning,
@@ -12,11 +12,11 @@ from .exceptions import (
 )
 
 
-__version__ = "16.0.0"
+__version__ = "18.1.0"
 
 __title__ = "service_identity"
-__description__ = "Service identity verification for pyOpenSSL."
-__uri__ = "https://service-identity.readthedocs.org/"
+__description__ = "Service identity verification for pyOpenSSL & cryptography."
+__uri__ = "https://service-identity.readthedocs.io/"
 
 __author__ = "Hynek Schlawack"
 __email__ = "hs@ox.cx"
@@ -29,5 +29,6 @@ __all__ = [
     "CertificateError",
     "SubjectAltNameWarning",
     "VerificationError",
+    "cryptography",
     "pyopenssl",
 ]
