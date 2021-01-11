@@ -4,28 +4,31 @@ Maintainer: Pexip AS <packaging@pexip.com>
 XSBC-Pexip-Original-Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
 XSBC-Pexip-Original-Uploaders: Tristan Seligmann <mithrandi@debian.org>
 Build-Depends:
- debhelper (>= 9),
+ debhelper-compat (= 12),
  dh-python,
  python-all,
  python-attr,
+ python-cryptography,
  python-idna,
+ python-ipaddress,
  python-openssl,
  python-pyasn1-modules,
  python-pytest,
  python-setuptools,
  python3-all,
  python3-attr,
+ python3-cryptography,
  python3-idna,
  python3-openssl,
  python3-pyasn1-modules,
  python3-pytest,
  python3-setuptools,
 Build-Depends-Indep: python3-sphinx
-Standards-Version: 3.9.7
+Standards-Version: 4.3.0.3
 Section: python
 Homepage: https://pypi.python.org/pypi/service_identity
-Vcs-Git: https://anonscm.debian.org/git/python-modules/packages/python-service-identity.git
-Vcs-Browser: https://anonscm.debian.org/cgit/python-modules/packages/python-servicy-identity.git
+Vcs-Git: https://salsa.debian.org/python-team/modules/python-service-identity.git
+Vcs-Browser: https://salsa.debian.org/python-team/modules/python-service-identity
 XS-Pexip-Upstream: http://ftp.debian.org/debian/ buster-backports
 
 Package: python-service-identity
