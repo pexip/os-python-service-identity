@@ -29,7 +29,7 @@ Section: python
 Homepage: https://pypi.python.org/pypi/service_identity
 Vcs-Git: https://salsa.debian.org/python-team/modules/python-service-identity.git
 Vcs-Browser: https://salsa.debian.org/python-team/modules/python-service-identity
-XS-Pexip-Upstream: http://ftp.debian.org/debian/ buster-backports
+XS-Pexip-Upstream: http://deb.debian.org/debian/ bullseye
 
 Package: python-service-identity
 Architecture: all
