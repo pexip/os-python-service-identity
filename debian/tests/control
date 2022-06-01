@@ -1,7 +1,5 @@
-Test-Command: for p in $(pyversions -s) $(py3versions -s); do if [ -d tests/ ]; then $p -m pytest tests/; fi; done
+Test-Command: for p in $(py3versions -s); do if [ -d tests/ ]; then $p -m pytest tests/; fi; done
 Depends:
- python-all,
- python-pytest,
  python3-all,
  python3-pytest,
  @

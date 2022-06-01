@@ -1,14 +1,14 @@
+python-service-identity (18.1.0-6) unstable; urgency=medium
+
+  * Drop python2 support; Closes: #938164
+
+ -- Sandro Tosi <morph@debian.org>  Wed, 01 Apr 2020 21:09:17 -0400
+
 python-service-identity (18.1.0-5~bpo10+1pexip1) pexip; urgency=medium
 
   * Migrate to Buster Backports
 
  -- Huw Jones <huw@pexip.com>  Mon, 11 Jan 2021 17:35:40 +0000
-
-python-service-identity (18.1.0-5~bpo10+1) buster-backports; urgency=medium
-
-  * Rebuild for buster-backports.
-
- -- Andrej Shadura <andrewsh@debian.org>  Thu, 18 Jul 2019 20:55:08 -0300
 
 python-service-identity (18.1.0-5) unstable; urgency=medium
 
@@ -52,24 +52,6 @@ python-service-identity (18.1.0-1) experimental; urgency=medium
 
  -- Andrej Shadura <andrewsh@debian.org>  Fri, 21 Jun 2019 08:52:20 -0500
 
-python-service-identity (16.0.0-2pexip3) pexip; urgency=medium
-
-  * Rebuild in buster environment
-
- -- Steve McIntyre <steve.mcintyre@pexip.com>  Thu, 16 Jul 2020 04:06:31 +0000
-
-python-service-identity (16.0.0-2pexip2) pexip; urgency=medium
-
-  * Python3
-
- -- Carl Chipperfield <carl@pexip.com>  Sat, 22 Jun 2019 00:20:29 +0000
-
-python-service-identity (16.0.0-2pexip1) pexip; urgency=medium
-
-  * Migrate to Stretch
-
- -- John-Mark Bell <jmb@pexip.com>  Tue, 10 Jul 2018 11:46:59 +0000
-
 python-service-identity (16.0.0-2) unstable; urgency=medium
 
   * Adopt package; thanks to Matthias Klose for his work so far.
@@ -92,18 +74,6 @@ python-service-identity (14.0.0-1) unstable; urgency=medium
   * Build-depend on python3-idna, python-idna.
 
  -- Matthias Klose <doko@debian.org>  Wed, 02 Sep 2015 21:17:52 +0200
-
-python-service-identity (1.0.0-3pexip2) pexip; urgency=low
-
-  * Restore python3 build
-
- -- John-Mark Bell <jmb@pexip.com>  Tue, 18 Apr 2017 08:02:57 +0100
-
-python-service-identity (1.0.0-3pexip1) pexip; urgency=low
-
-  * Prepare Pexip packaging
-
- -- John-Mark Bell <jmb@pexip.com>  Mon, 08 Sep 2014 16:22:12 +0000
 
 python-service-identity (1.0.0-3) unstable; urgency=medium
 
