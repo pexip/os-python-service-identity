@@ -1,3 +1,9 @@
+python-service-identity (18.1.0-6pexip2) pexip-bullseye; urgency=medium
+
+  * Main bullseye build
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Fri, 24 Jun 2022 14:04:32 +0100
+
 python-service-identity (18.1.0-6pexip1) pexip; urgency=medium
 
   * Initial bullseye build
