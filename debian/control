@@ -1,7 +1,8 @@
 Source: python-service-identity
 Priority: optional
-Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
-Uploaders: Tristan Seligmann <mithrandi@debian.org>
+Maintainer: Pexip AS <packaging@pexip.com>
+XSBC-Pexip-Original-Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+XSBC-Pexip-Original-Uploaders: Tristan Seligmann <mithrandi@debian.org>
 Build-Depends:
  debhelper-compat (= 12),
  dh-python,

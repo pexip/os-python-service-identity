@@ -1,3 +1,9 @@
+python-service-identity (18.1.0-6pexip3) pexip-bullseye; urgency=medium
+
+  * Fix up debian/control Maintainer/Uploaders fields.
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Tue, 28 Jun 2022 17:44:40 +0100
+
 python-service-identity (18.1.0-6pexip2) pexip-bullseye; urgency=medium
 
   * Main bullseye build
