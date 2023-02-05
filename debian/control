@@ -1,9 +1,9 @@
 Source: python-service-identity
 Priority: optional
-Maintainer: Debian Python Modules Team <python-modules-team@lists.alioth.debian.org>
+Maintainer: Debian Python Team <team+python@tracker.debian.org>
 Uploaders: Tristan Seligmann <mithrandi@debian.org>
 Build-Depends:
- debhelper-compat (= 12),
+ debhelper-compat (= 13),
  dh-python,
  python3-all,
  python3-attr,
@@ -17,8 +17,8 @@ Build-Depends-Indep: python3-sphinx
 Standards-Version: 4.3.0.3
 Section: python
 Homepage: https://pypi.python.org/pypi/service_identity
-Vcs-Git: https://salsa.debian.org/python-team/modules/python-service-identity.git
-Vcs-Browser: https://salsa.debian.org/python-team/modules/python-service-identity
+Vcs-Git: https://salsa.debian.org/python-team/packages/python-service-identity.git
+Vcs-Browser: https://salsa.debian.org/python-team/packages/python-service-identity
 
 Package: python3-service-identity
 Architecture: all
