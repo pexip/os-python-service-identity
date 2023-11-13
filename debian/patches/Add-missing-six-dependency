@@ -1,0 +1,23 @@
+From 705f4af829adf4d1b6e44250d8039635a73199d5 Mon Sep 17 00:00:00 2001
+From: wim glenn <wim.glenn@gmail.com>
+Date: Fri, 7 May 2021 21:07:26 -0500
+Subject: [PATCH] Add missing six dependency
+Origin: backport, https://github.com/pyca/service-identity/commit/705f4af829adf4d1b6e44250d8039635a73199d5
+Bug-Debian: https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1030628
+Last-Update: 2022-02-05
+
+--- a/setup.py
++++ b/setup.py
+@@ -40,10 +40,11 @@ INSTALL_REQUIRES = [
+     # https://github.com/pypa/setuptools/issues/498
+     "pyasn1",
+     "cryptography",
++    "six",
+ ]
+ EXTRAS_REQUIRE = {
+     "idna": ["idna"],
+-    "tests": ["coverage>=4.2.0", "pytest"],
++    "tests": ["coverage>=4.2.0", "pytest", "six"],
+     "docs": ["sphinx"],
+ }
+ EXTRAS_REQUIRE["dev"] = (
