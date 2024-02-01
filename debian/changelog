@@ -1,3 +1,9 @@
+python-service-identity (18.1.0-8+pexip24u3) pexip-bookworm; urgency=medium
+
+  * New versioning scheme
+
+ -- Mark Hymers <mark.hymers@pexip.com>  Thu, 01 Feb 2024 16:25:47 +0000
+
 python-service-identity (18.1.0-8pexip2) pexip-bookworm; urgency=medium
 
   * Bookworm build for product distribution
