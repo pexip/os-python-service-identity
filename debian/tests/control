@@ -1,5 +1,7 @@
 Test-Command: for p in $(py3versions -s); do if [ -d tests/ ]; then $p -m pytest tests/; fi; done
 Depends:
  python3-all,
+ python3-idna,
+ python3-openssl,
  python3-pytest,
  @

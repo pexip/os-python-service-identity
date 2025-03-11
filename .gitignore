@@ -1,0 +1,13 @@
+.tox
+dist
+build
+.coverage*
+.venv
+htmlcov
+_build
+*.pyc
+.cache
+.pytest_cache
+.vscode
+.envrc
+.direnv
