@@ -2,10 +2,15 @@ Source: python-service-identity
 Priority: optional
 Maintainer: Pexip AS <packaging@pexip.com>
 XSBC-Pexip-Original-Maintainer: Debian Python Team <team+python@tracker.debian.org>
-XSBC-Pexip-Original-Uploaders: Tristan Seligmann <mithrandi@debian.org>
+XSBC-Pexip-Original-Uploaders: Colin Watson <cjwatson@debian.org>
 Build-Depends:
  debhelper-compat (= 13),
- dh-python,
+ dh-sequence-python3,
+ pybuild-plugin-pyproject,
+ python3-all,
+ python3-hatch-fancy-pypi-readme,
+ python3-hatch-vcs,
+ python3-hatchling,
  python3-all,
  python3-attr,
  python3-cryptography,
@@ -13,11 +18,10 @@ Build-Depends:
  python3-openssl,
  python3-pyasn1-modules,
  python3-pytest,
- python3-setuptools,
 Build-Depends-Indep: python3-sphinx
 Standards-Version: 4.3.0.3
 Section: python
-Homepage: https://pypi.python.org/pypi/service_identity
+Homepage: https://github.com/pyca/service-identity
 Vcs-Git: https://salsa.debian.org/python-team/packages/python-service-identity.git
 Vcs-Browser: https://salsa.debian.org/python-team/packages/python-service-identity
 XS-Pexip-Upstream: http://deb.debian.org/debian/ trixie

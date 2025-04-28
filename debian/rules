@@ -6,8 +6,4 @@
 export LC_ALL=C.UTF-8
 
 %:
-	dh $@ --with python3 --buildsystem=pybuild
-
-override_dh_auto_test:
-	# ignore test results, idna test fail
-	[ -d tests/ ] && dh_auto_test -- --test-pytest --test-args='{dir}/tests' || true
+	dh $@ --buildsystem=pybuild
